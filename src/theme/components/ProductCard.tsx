@@ -7,24 +7,28 @@ export const ProductCard = ({ product }: { product: Card }) => {
     <article className={styles.card}>
       <Link href={product.href} className={styles.cardLink}>
         <div className={styles.cardPicture}>
-          {product.photo ? <Image image={product.photo} alt={product.photo.alt ?? product.name} ratio={0.8} sizes="(min-width: 900px) 25vw, 50vw" className={styles.cardImage} /> : <span className={styles.noPicture}>{t('shop.card.noPicture')}</span>}
+          {product.photo ? <Image image={product.photo} alt={product.photo.alt ?? product.name} ratio={1} sizes="(min-width: 1280px) 25vw, (min-width: 640px) 33vw, 50vw" className={styles.cardImage} /> : <span className={styles.noPicture}>{t('shop.card.noPicture')}</span>}
           {product.badges[0] ? <span className={styles.badge}>{product.badges[0].label}</span> : null}
           {product.stock.inStock ? null : <span className={styles.soldOut}>{t('shop.card.soldOut')}</span>}
         </div>
-        <h3 className={styles.cardName}>{product.name}</h3>
-      </Link>
-      <span className={styles.cardRule} aria-hidden="true" />
-      {product.price ? (
-        <p className={styles.cardPrice}>
-          {product.from ? <span className={styles.from}>{t('shop.card.from')}</span> : null}
-          <Price money={product.price} compareAt={product.compareAt} includesTax={store.pricesIncludeTax} locale={locale} t={t} className={styles.price} />
-        </p>
-      ) : null}
-      <Link href={product.href} className={styles.cardMore}>
-        {t('shop.card.view')}
-        <svg className={styles.cardMoreIcon} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path d="M5 12h14M13 6l6 6-6 6" />
-        </svg>
+        <div className={styles.cardBody}>
+          <h3 className={styles.cardName}>{product.name}</h3>
+          <div className={styles.cardFoot}>
+            {product.price ? (
+              <p className={styles.cardPrice}>
+                {product.from ? <span className={styles.from}>{t('shop.card.from')}</span> : null}
+                <Price money={product.price} compareAt={product.compareAt} includesTax={store.pricesIncludeTax} locale={locale} t={t} className={styles.price} />
+              </p>
+            ) : (
+              <span />
+            )}
+            <span className={styles.cardArrow} aria-hidden="true">
+              <svg className={styles.cardArrowIcon} viewBox="0 0 24 24" focusable="false">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </span>
+          </div>
+        </div>
       </Link>
     </article>
   )

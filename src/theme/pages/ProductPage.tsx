@@ -2,6 +2,7 @@ import { Breadcrumbs, LegalNotices, Link, Price, RichText, useProduct, useStoref
 import { BuyButtons } from '../components/interactive/BuyButtons'
 import { Gallery } from '../components/interactive/Gallery'
 import { Options } from '../components/interactive/Options'
+import { WishlistHeart } from '../components/interactive/WishlistHeart'
 import { Retry } from '../components/interactive/Retry'
 import { Layout } from '../components/Layout'
 import { Notice } from '../components/Notice'
@@ -49,7 +50,10 @@ export const ProductPage = () => {
           <Gallery photos={page.photos} video={product.video} name={product.name} />
           <div className={styles.info}>
             {product.badges[0] ? <span className={styles.badge}>{product.badges[0].label}</span> : null}
-            <h1 className={styles.title}>{product.name}</h1>
+            <div className={styles.titleRow}>
+              <h1 className={styles.title}>{product.name}</h1>
+              <WishlistHeart productId={product.id} name={product.name} versionId={page.version?.id ?? null} />
+            </div>
             {page.price ? (
               <p className={styles.price}>
                 {page.from ? <span className={styles.from}>{t('shop.card.from')}</span> : null}

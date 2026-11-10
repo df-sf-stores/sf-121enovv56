@@ -2,7 +2,7 @@
 
 .eyebrow {
   margin: 0;
-  color: var(--accent);
+  color: var(--accent-text);
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.25em;
@@ -52,7 +52,7 @@
 
 .heroEyebrow {
   margin: 0;
-  color: var(--taupe);
+  color: var(--taupe-text);
   font-size: 12px;
   letter-spacing: 0.3em;
   text-transform: uppercase;
@@ -73,7 +73,7 @@
   width: min(100%, 192px);
   height: 10px;
   margin-top: 20px;
-  color: var(--taupe);
+  color: var(--taupe-text);
 }
 
 .heroLead {
@@ -200,7 +200,7 @@
   border-radius: 999px;
   background: var(--soft);
   box-shadow: 0 0 0 1px rgb(179 165 147 / 40%);
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 .valueIcon svg,
@@ -216,7 +216,7 @@
 
 .valueTitle {
   margin: 4px 0 0;
-  color: var(--accent);
+  color: var(--accent-text);
   font-family: var(--heading-font);
   font-size: 20px;
   font-weight: var(--heading-weight);
@@ -271,7 +271,7 @@
   border-radius: 999px;
   background: rgb(250 249 247 / 10%);
   box-shadow: 0 0 0 1px rgb(179 165 147 / 60%);
-  color: var(--taupe);
+  color: var(--taupe-text);
 }
 
 .visitIcon svg {
@@ -302,7 +302,7 @@
 
 .visitName {
   margin: 0;
-  color: var(--accent);
+  color: var(--accent-text);
   font-family: var(--heading-font);
   font-size: 20px;
   font-weight: var(--heading-weight);

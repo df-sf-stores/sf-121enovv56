@@ -1,8 +1,15 @@
+/* The phone's slide-in menu and full-screen search. */
+
 .menu {
-  display: contents;
+  display: flex;
 }
 
-.toggle {
+.searchToggle {
+  display: flex;
+}
+
+.toggle,
+.close {
   display: inline-flex;
   min-width: 44px;
   height: 44px;
@@ -12,14 +19,15 @@
   border: 0;
   border-radius: 999px;
   background: transparent;
-  color: inherit;
+  color: var(--ink);
   cursor: pointer;
-  order: 2;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.toggle:focus-visible {
-  outline: 2px solid currentcolor;
-  outline-offset: 2px;
+.toggle:hover,
+.close:hover {
+  background: var(--soft);
+  color: var(--primary-text);
 }
 
 .icon {
@@ -28,7 +36,8 @@
   fill: none;
   stroke: currentcolor;
   stroke-linecap: round;
-  stroke-width: 1.6;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
 }
 
 .label {
@@ -40,25 +49,166 @@
   white-space: nowrap;
 }
 
-.panel {
+.scrim {
+  position: fixed;
+  z-index: 60;
+  inset: 0;
   display: none;
+  background: rgb(11 18 32 / 55%);
 }
 
-.open {
+.scrimOpen {
   display: block;
-  flex-basis: 100%;
-  order: 3;
 }
 
-@media (min-width: 900px) {
-  .toggle {
-    display: none;
+.sheet {
+  position: fixed;
+  z-index: 61;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  overflow-y: auto;
+  width: min(86vw, 360px);
+  box-sizing: border-box;
+  flex-direction: column;
+  padding: 8px 16px 24px;
+  background: var(--bg);
+  box-shadow: 0 0 40px rgb(11 18 32 / 30%);
+}
+
+.sheetOpen {
+  animation: slide-in 0.25s ease-out;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
   }
 
-  .panel,
-  .open {
-    display: block;
-    flex-basis: auto;
-    order: 0;
+  to {
+    transform: translateX(0);
+  }
+}
+
+.sheetHead {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.search {
+  margin-bottom: 12px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.shop {
+  display: flex;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  border-radius: 999px;
+  background: var(--primary);
+  color: var(--primary-ink);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.link,
+.summary {
+  display: flex;
+  min-height: 48px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  list-style: none;
+}
+
+.summary::marker {
+  color: transparent;
+}
+
+.link:hover,
+.summary:hover {
+  color: var(--primary-text);
+}
+
+.chevron {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentcolor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+  transition: transform 0.2s ease;
+}
+
+.group[open] .chevron {
+  transform: rotate(180deg);
+}
+
+.children {
+  display: flex;
+  flex-direction: column;
+  padding: 4px 0 8px 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.childLink {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  color: var(--ink-soft);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.childLink:hover {
+  color: var(--primary-text);
+}
+
+.extra {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
+
+.searchPanel {
+  position: fixed;
+  z-index: 61;
+  inset: 0;
+  padding: 12px 16px;
+  background: var(--bg);
+}
+
+.searchRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.searchField {
+  min-width: 0;
+  flex: 1;
+}
+
+@media (min-width: 768px) {
+  .menu,
+  .searchToggle {
+    display: none;
   }
 }

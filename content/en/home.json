@@ -8,63 +8,109 @@
     "pause": "Pause the slides",
     "play": "Play the slides",
     "goTo": "Go to slide {n}",
-    "first": "Our latest collection, shop now",
-    "second": "Shop the collection",
-    "third": "Explore more of the shop"
-  },
-  "newest": "New Arrivals",
-  "newestEmpty": "New arrivals are on their way. Check back soon.",
-  "featured": "Featured Products",
-  "viewAll": "View all products",
-  "promises": {
-    "title": "Why shop with us",
-    "craft": {
-      "title": "Chosen with Care",
-      "body": "Every piece is picked for its quality and finish"
+    "audi": {
+      "eyebrow": "For Audi cars",
+      "title": "Engineered for a higher standard",
+      "subtitle": "Multimedia and navigation upgrades made to fit your Audi.",
+      "cta": "View more"
     },
-    "stage": {
-      "title": "For Every Occasion",
-      "body": "Something for everyday wear and special days alike"
+    "bmw": {
+      "eyebrow": "For BMW cars",
+      "title": "Premium upgrades for a superior drive",
+      "subtitle": "Plug-and-play systems for every BMW series.",
+      "cta": "View more"
     },
-    "secure": {
-      "title": "Secure Checkout",
-      "body": "Pay safely through trusted payment partners"
+    "multimedia": {
+      "eyebrow": "Drive the sound",
+      "title": "Smart audio. Bigger journeys.",
+      "subtitle": "Android head units, GPS navigation and in-car multimedia systems.",
+      "cta": "Shop now"
     },
-    "support": {
-      "title": "Here to Help",
-      "body": "Questions about an order? Get in touch with us"
+    "mercedes": {
+      "eyebrow": "For Mercedes-Benz cars",
+      "title": "Premium upgrades, a class above",
+      "subtitle": "Multimedia systems made for every Mercedes-Benz class.",
+      "cta": "View more"
+    },
+    "porsche": {
+      "eyebrow": "For Porsche cars",
+      "title": "Designed for a higher thrill",
+      "subtitle": "Screens and navigation built for Cayenne, Macan, Panamera and more.",
+      "cta": "View more"
     }
   },
-  "collections": {
-    "eyebrow": "Shop by Category",
-    "title": "Explore Our Collections",
-    "explore": "Explore"
+  "trust": {
+    "title": "Why shop with us",
+    "genuine": {
+      "title": "Genuine products",
+      "body": "100% authentic & original branded products"
+    },
+    "dispatch": {
+      "title": "Fast dispatch",
+      "body": "Quick processing & on-time delivery"
+    },
+    "secure": {
+      "title": "Secure payments",
+      "body": "Safe & encrypted transactions"
+    },
+    "support": {
+      "title": "Expert support",
+      "body": "Dedicated help whenever you need"
+    }
   },
-  "deals": {
-    "eyebrow": "Handpicked for you"
+  "categories": {
+    "eyebrow": "Shop by category",
+    "title": "Every upgrade, every car.",
+    "body": "From head units and navigation to multimedia and accessories — browse the whole range.",
+    "viewAll": "View all"
   },
-  "spotlight": {
-    "eyebrow": "Featured Collection",
-    "body": "Discover the pieces in this collection, chosen for their quality and craft.",
-    "cta": "Shop all {name}"
+  "vehicles": {
+    "facet": "Vehicle",
+    "eyebrow": "Shop by vehicle",
+    "title": "Popular vehicle brands",
+    "body": "Pick your make to see products built for it.",
+    "viewAll": "View all"
   },
-  "story": {
-    "eyebrow": "Our Story",
-    "title": "Made with care,",
-    "accent": "chosen for you.",
-    "lead": "We bring together pieces we love, chosen for their quality, their craft and the way they make you feel.",
-    "body": "Whether you are shopping for yourself or for someone special, every item in our collection is picked to look as good as it feels.",
-    "more": "Explore the collection"
+  "rails": {
+    "featuredEyebrow": "Handpicked",
+    "newestEyebrow": "Just in",
+    "newest": "New arrivals",
+    "trendingEyebrow": "Popular right now",
+    "viewAll": "View All Products",
+    "previous": "Previous products",
+    "next": "Next products",
+    "empty": "New arrivals are on their way. Check back soon."
   },
-  "range": {
-    "eyebrow": "Explore the Range",
-    "title": "Find Exactly What You Need",
-    "shopAll": "Shop all {name}"
+  "why": {
+    "eyebrow": "Why choose us",
+    "title": "The smarter way to",
+    "accent": "upgrade your car.",
+    "body": "Four promises we ship with every order.",
+    "quality": {
+      "title": "High Quality",
+      "body": "Premium products carefully selected for you"
+    },
+    "prices": {
+      "title": "Best Prices",
+      "body": "Competitive pricing on all our products"
+    },
+    "payments": {
+      "title": "Secure Payments",
+      "body": "Encrypted checkout with trusted payment providers"
+    },
+    "delivery": {
+      "title": "Fast Delivery",
+      "body": "Quick and reliable shipping"
+    }
   },
-  "signup": {
-    "eyebrow": "Join us",
-    "title": "Shop faster with an account",
-    "body": "Create an account for faster checkout, order tracking and saved addresses.",
-    "action": "Create Account"
+  "pick": {
+    "eyebrow": "Editor's Pick",
+    "body": "A curated edit of our favourite pieces, chosen for their quality and design.",
+    "cta": "Explore the collection"
+  },
+  "join": {
+    "title": "Join the Community",
+    "body": "Create an account for a faster checkout, order tracking, and early access to new arrivals.",
+    "cta": "Create Account"
   }
 }

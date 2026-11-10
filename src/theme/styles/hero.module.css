@@ -1,29 +1,41 @@
+/* Home hero: full-width banner on black, navy caption strip beneath. */
+
 .hero {
   position: relative;
+  background: #000;
+}
+
+.stage {
+  position: relative;
   overflow: hidden;
-  background: var(--deep);
   touch-action: pan-y;
 }
 
-/* Slides share one grid cell; position classes slide them in from either side. */
 .track {
-  display: grid;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1920 / 649;
+  min-height: 180px;
 }
 
 .slide {
-  grid-area: 1 / 1;
-  transition: transform 0.6s ease;
+  position: absolute;
+  inset: 0;
+  transition: transform 0.6s ease, opacity 0.6s ease;
 }
 
 .current {
+  opacity: 1;
   transform: translateX(0);
 }
 
 .before {
+  opacity: 0;
   transform: translateX(-100%);
 }
 
 .after {
+  opacity: 0;
   transform: translateX(100%);
 }
 
@@ -31,30 +43,15 @@
   transition: none;
 }
 
-.slideLink {
+.picture {
   display: block;
   width: 100%;
-  /* The screen's height less the header and menu; the banner fits inside rather than being cropped (art.module.css). */
-  max-height: calc(100svh - 7.5rem);
-  aspect-ratio: 16 / 9;
-}
-
-.slideLink:focus-visible {
-  outline: 2px solid var(--taupe);
-  outline-offset: -4px;
-}
-
-.hidden {
-  position: absolute;
-  overflow: hidden;
-  width: 1px;
-  height: 1px;
-  clip-path: inset(50%);
-  white-space: nowrap;
+  height: 100%;
 }
 
 .arrow {
   position: absolute;
+  z-index: 2;
   top: 50%;
   display: none;
   width: 44px;
@@ -62,20 +59,22 @@
   align-items: center;
   justify-content: center;
   padding: 0;
-  border: 1px solid rgb(179 165 147 / 60%);
+  border: 0;
   border-radius: 999px;
-  background: rgb(0 0 0 / 25%);
+  background: rgb(0 0 0 / 40%);
   color: #fff;
   cursor: pointer;
   transform: translateY(-50%);
-  backdrop-filter: blur(4px);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .arrow:hover {
-  background: rgb(0 0 0 / 45%);
+  background: var(--primary);
+  color: var(--primary-ink);
 }
 
-.arrow svg {
+.arrow svg,
+.toggle svg {
   width: 20px;
   height: 20px;
   fill: none;
@@ -86,115 +85,174 @@
 }
 
 .previous {
-  left: 12px;
+  left: 16px;
 }
 
 .next {
-  right: 12px;
+  right: 16px;
 }
 
 .dots {
   position: absolute;
-  bottom: 4px;
+  z-index: 2;
+  bottom: 10px;
   left: 50%;
   display: flex;
+  align-items: center;
+  gap: 2px;
   transform: translateX(-50%);
 }
 
-/* A 24px tap target (WCAG 2.2 target size) around the small visible pill. */
+/* A 24px target around an 8px dot. */
 .dot {
-  display: flex;
-  min-width: 24px;
+  position: relative;
+  width: 24px;
   height: 24px;
-  align-items: center;
-  justify-content: center;
-  padding: 0 2px;
+  padding: 0;
   border: 0;
-  background: none;
+  background: transparent;
   cursor: pointer;
 }
 
 .dot::before {
-  width: 12px;
-  height: 6px;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 8px;
+  height: 8px;
   border-radius: 999px;
   background: rgb(255 255 255 / 60%);
   content: '';
-}
-
-.dot:hover::before {
-  background: #fff;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .dotOn::before {
-  width: 32px;
-  background: var(--taupe);
+  background: var(--primary);
+  transform: scaleX(3);
 }
 
-.toggle {
-  position: absolute;
-  bottom: 4px;
-  left: 12px;
+.caption {
+  background: var(--navy);
+  color: var(--navy-ink);
+}
+
+.captionInner {
   display: flex;
-  width: 32px;
-  height: 32px;
+  box-sizing: border-box;
+  width: min(100%, 1280px);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  margin-inline: auto;
+  padding: 24px 16px 28px;
+}
+
+.captionText {
+  min-width: 0;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--heading-font);
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  margin: 8px 0 0;
+  color: var(--navy-soft);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.captionActions {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 0;
-  border: 1px solid rgb(179 165 147 / 60%);
+  gap: 12px;
+}
+
+.cta {
+  display: inline-flex;
+  height: 48px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 26px;
   border-radius: 999px;
-  background: rgb(0 0 0 / 25%);
-  color: #fff;
-  cursor: pointer;
+  background: var(--primary);
+  color: var(--primary-ink);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.toggle:hover {
-  background: rgb(0 0 0 / 45%);
+.cta:hover {
+  background: #ff7a4d;
+  transform: translateY(-1px);
 }
 
-.toggle svg {
-  width: 14px;
-  height: 14px;
-  fill: currentcolor;
+.ctaIcon {
+  width: 18px;
+  height: 18px;
+  fill: none;
   stroke: currentcolor;
+  stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 2;
 }
 
-.arrow:focus-visible,
-.toggle:focus-visible,
-.dot:focus-visible {
-  outline: 2px solid var(--taupe);
-  outline-offset: 2px;
+.toggle {
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid rgb(255 255 255 / 20%);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--navy-ink);
+  cursor: pointer;
 }
 
-@media (min-width: 640px) {
-  .arrow {
-    display: flex;
-  }
+.toggle:hover {
+  border-color: var(--primary);
+  color: var(--primary);
 }
 
 @media (min-width: 768px) {
-  .previous {
-    left: 24px;
+  .arrow {
+    display: inline-flex;
   }
 
-  .next {
-    right: 24px;
+  .captionInner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    padding: 28px 16px;
   }
 
-  .dots {
-    bottom: 12px;
+  .title {
+    font-size: 48px;
   }
 
-  .toggle {
-    bottom: 12px;
-    left: 24px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .slide {
-    transition: none;
+  .subtitle {
+    font-size: 16px;
   }
 }

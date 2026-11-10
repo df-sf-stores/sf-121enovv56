@@ -10,42 +10,52 @@
   background-size: cover;
 }
 
-/* Hero banners: the picture fits whole, and its gradient fills any band beside it. */
+/* Hero banners (Storefront › Assets "slider 1"–"slider 5"): the picture fits whole, so its lettering is never cut, and its gradient fills any band beside it. */
 
-.bannerFirst,
-.bannerSecond,
-.bannerThird {
+.bannerAudi,
+.bannerBmw,
+.bannerMultimedia,
+.bannerMercedes,
+.bannerPorsche {
   background-size: contain, cover;
 }
 
-.bannerFirst {
-  background-image: radial-gradient(circle at 70% 40%, #f7f5f2 0, #e6e1da 55%, #cfc7bc 100%);
+.bannerAudi {
+  background-image: radial-gradient(circle at 75% 40%, #3a1418 0, #1a1a24 45%, #0b0b12 100%);
 }
 
-.bannerSecond {
-  background-image: radial-gradient(circle at 70% 40%, #6b645d 0, #45403b 60%, #2f2b28 100%);
+.bannerBmw {
+  background-image: radial-gradient(circle at 25% 60%, #17304a 0, #1a2233 50%, #060b17 100%);
 }
 
-.bannerThird {
-  background-image: radial-gradient(circle at 70% 40%, #f4f1ec 0, #e2dcd3 55%, #c9c0b3 100%);
+.bannerMultimedia {
+  background-image: radial-gradient(circle at 60% 30%, #4a2617 0, #1a1a22 55%, #0b0b12 100%);
+}
+
+.bannerMercedes {
+  background-image: radial-gradient(circle at 60% 30%, #3a2a18 0, #121a2b 55%, #060b17 100%);
+}
+
+.bannerPorsche {
+  background-image: radial-gradient(circle at 70% 40%, #4a3010 0, #1a1a22 50%, #0b0b12 100%);
 }
 
 /* Collection placeholders, in turn by a collection's place in the store's list */
 
 .stone {
-  background-image: linear-gradient(160deg, #8a8178, #4a4541);
+  background-image: linear-gradient(160deg, #f4f6fa, #dfe3ea);
   background-position: center 25%;
 }
 
 .sand {
-  background-image: linear-gradient(160deg, #a39482, #5e554b);
+  background-image: linear-gradient(160deg, #fff1ec, #f6dccf);
 }
 
 .slate {
-  background-image: linear-gradient(160deg, #73777b, #3c3f42);
+  background-image: linear-gradient(160deg, #eef1f6, #d6dce6);
 }
 
 .sage {
-  background-image: linear-gradient(160deg, #7d8577, #454a41);
+  background-image: linear-gradient(160deg, #f7f2ee, #e7ddd5);
   background-position: center 25%;
 }

@@ -33,7 +33,7 @@
 
 .pillGood {
   background: var(--tint);
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 .pillWarn,

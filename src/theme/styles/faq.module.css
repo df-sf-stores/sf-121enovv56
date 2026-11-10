@@ -10,7 +10,7 @@
 
 .groupTitle {
   margin: 0 0 8px;
-  color: var(--accent);
+  color: var(--accent-text);
   font-family: var(--heading-font);
   font-size: 22px;
   font-weight: var(--heading-weight);
@@ -80,7 +80,7 @@
 
 .link {
   align-self: flex-start;
-  color: var(--accent);
+  color: var(--accent-text);
   font-weight: 600;
   text-underline-offset: 3px;
 }
@@ -104,7 +104,7 @@
 
 .moreTitle {
   margin: 0;
-  color: var(--accent);
+  color: var(--accent-text);
   font-family: var(--heading-font);
   font-size: 22px;
   font-weight: var(--heading-weight);

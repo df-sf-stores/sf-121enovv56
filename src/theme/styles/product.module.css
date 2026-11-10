@@ -395,10 +395,28 @@
   font-size: 14px;
 }
 
-.buy > .heart {
+/* The product name with the wishlist heart beside it. */
+
+.titleRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 8px 16px;
+}
+
+.titleRow > .title {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.titleRow > .added {
+  flex-basis: 100%;
+}
+
+.titleRow > .heart {
   display: inline-flex;
-  flex: 0 0 48px;
-  min-height: 48px;
+  flex: 0 0 44px;
+  min-height: 44px;
   align-items: center;
   justify-content: center;
   padding: 0;
@@ -409,9 +427,9 @@
   cursor: pointer;
 }
 
-.buy > .heartOn {
+.titleRow > .heartOn {
   border-color: var(--accent);
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 .heart:focus-visible {
