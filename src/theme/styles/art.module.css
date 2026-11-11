@@ -21,7 +21,7 @@
 }
 
 .bannerAudi {
-  background-image: radial-gradient(circle at 75% 40%, #3a1418 0, #1a1a24 45%, #0b0b12 100%);
+  background-image: url(media/audi.webp), radial-gradient(circle at 75% 40%, #3a1418 0, #1a1a24 45%, #0b0b12 100%);
 }
 
 .bannerBmw {
