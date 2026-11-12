@@ -6,7 +6,7 @@ import { cx } from '../cx'
 import art from '../../styles/art.module.css'
 import styles from '../../styles/hero.module.css'
 
-const autoplayMs = 5500
+const autoplayMs = 3000
 const swipePx = 40
 
 export type HeroSlide = {
