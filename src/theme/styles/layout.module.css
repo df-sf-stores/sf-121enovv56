@@ -35,7 +35,7 @@
   --focus: var(--primary-text);
   --radius: 12px;
   --button-radius: 999px;
-  --heading-font: 'Bebas Neue', 'Arial Narrow', sans-serif;
+  --heading-font: 'Bebas Neue', sans-serif;
   --heading-weight: 400;
   --brand-weight: 400;
   --heading-case: uppercase;
@@ -57,11 +57,15 @@
   --df-sealed-surface: var(--surface);
   --df-sealed-radius: var(--radius);
 
+  /*
+   * Pinned to the window's edges, past the browser's 8px body margin, which theme CSS can't name (storefront
+   * ARCHITECTURE §3.4). A negative margin made the shell 16px wider than the body, its right 8px a sideways scroll.
+   */
+  position: absolute;
+  inset: 0 0 auto;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  /* Cancels the browser's 8px body margin, which theme CSS can't name (storefront ARCHITECTURE §3.4). */
-  margin: -8px;
   background: var(--bg);
   color: var(--ink);
   font-family: var(--body-font);
