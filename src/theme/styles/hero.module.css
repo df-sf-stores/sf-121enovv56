@@ -11,11 +11,11 @@
   touch-action: pan-y;
 }
 
+/* The banners' own shape at every width, so a banner fills its slide whole, with no band above or below on a phone. */
 .track {
   position: relative;
   width: 100%;
   aspect-ratio: 1920 / 649;
-  min-height: 180px;
 }
 
 .slide {

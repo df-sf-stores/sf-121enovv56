@@ -2,7 +2,6 @@ import type { ReactNode } from 'react'
 import { ConsentBanner, ConsentSettingsButton, Link, navigate, PoweredBy, PreviewBanner, SearchField, StoreLogo, ThemeImage, useCart, useCollections, useMenu, useStorefront, useWishlist, type MenuItem } from '@dripfunnel/storefront-core/theme'
 import { Menu } from './interactive/Menu'
 import { NavItem } from './interactive/NavItem'
-import { SearchToggle } from './interactive/SearchToggle'
 import { SocialIcon } from './SocialIcon'
 import styles from '../styles/layout.module.css'
 import drawer from '../styles/menu.module.css'
@@ -133,9 +132,6 @@ export const Layout = ({ children }: { children: ReactNode }) => {
             <Search />
           </div>
           <div className={styles.tools}>
-            <SearchToggle label={t('common.tools.search')} close={t('common.nav.closeMenu')}>
-              <Search />
-            </SearchToggle>
             <Link href="/account/wishlist/" className={styles.tool}>
               <svg className={styles.icon} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path d="M12 20.3l-1.3-1.2C6 14.9 3 12.2 3 8.8 3 6.1 5.1 4 7.8 4c1.5 0 3 .7 4.2 1.9C13.2 4.7 14.7 4 16.2 4 18.9 4 21 6.1 21 8.8c0 3.4-3 6.1-7.7 10.3L12 20.3z" />
