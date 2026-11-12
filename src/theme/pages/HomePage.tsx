@@ -141,9 +141,9 @@ export const HomePage = () => {
       <h1 className={styles.hidden}>{t('home.title')}</h1>
       <HeroCarousel
         slides={[
+          { key: 'multimedia', art: art.bannerMultimedia, href: '/collections/automotive-multimedia-systems/', eyebrow: t('home.hero.multimedia.eyebrow'), title: t('home.hero.multimedia.title'), subtitle: t('home.hero.multimedia.subtitle'), cta: t('home.hero.multimedia.cta') },
           { key: 'audi', art: art.bannerAudi, href: '/collections/audi/', eyebrow: t('home.hero.audi.eyebrow'), title: t('home.hero.audi.title'), subtitle: t('home.hero.audi.subtitle'), cta: t('home.hero.audi.cta') },
           { key: 'bmw', art: art.bannerBmw, href: '/collections/bmw/', eyebrow: t('home.hero.bmw.eyebrow'), title: t('home.hero.bmw.title'), subtitle: t('home.hero.bmw.subtitle'), cta: t('home.hero.bmw.cta') },
-          { key: 'multimedia', art: art.bannerMultimedia, href: '/collections/automotive-multimedia-systems/', eyebrow: t('home.hero.multimedia.eyebrow'), title: t('home.hero.multimedia.title'), subtitle: t('home.hero.multimedia.subtitle'), cta: t('home.hero.multimedia.cta') },
           { key: 'mercedes', art: art.bannerMercedes, href: '/collections/mercedes-benz/', eyebrow: t('home.hero.mercedes.eyebrow'), title: t('home.hero.mercedes.title'), subtitle: t('home.hero.mercedes.subtitle'), cta: t('home.hero.mercedes.cta') },
           { key: 'porsche', art: art.bannerPorsche, href: '/collections/porsche/', eyebrow: t('home.hero.porsche.eyebrow'), title: t('home.hero.porsche.title'), subtitle: t('home.hero.porsche.subtitle'), cta: t('home.hero.porsche.cta') },
         ]}
