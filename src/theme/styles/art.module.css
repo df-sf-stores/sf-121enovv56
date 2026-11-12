@@ -25,19 +25,19 @@
 }
 
 .bannerBmw {
-  background-image: radial-gradient(circle at 25% 60%, #17304a 0, #1a2233 50%, #060b17 100%);
+  background-image: url(media/bmw.webp), radial-gradient(circle at 25% 60%, #17304a 0, #1a2233 50%, #060b17 100%);
 }
 
 .bannerMultimedia {
-  background-image: radial-gradient(circle at 60% 30%, #4a2617 0, #1a1a22 55%, #0b0b12 100%);
+  background-image: url(media/multimedia.webp), radial-gradient(circle at 60% 30%, #4a2617 0, #1a1a22 55%, #0b0b12 100%);
 }
 
 .bannerMercedes {
-  background-image: radial-gradient(circle at 60% 30%, #3a2a18 0, #121a2b 55%, #060b17 100%);
+  background-image: url(media/mercedes.webp), radial-gradient(circle at 60% 30%, #3a2a18 0, #121a2b 55%, #060b17 100%);
 }
 
 .bannerPorsche {
-  background-image: radial-gradient(circle at 70% 40%, #4a3010 0, #1a1a22 50%, #0b0b12 100%);
+  background-image: url(media/porsche.webp), radial-gradient(circle at 70% 40%, #4a3010 0, #1a1a22 50%, #0b0b12 100%);
 }
 
 /* Collection placeholders, in turn by a collection's place in the store's list */
