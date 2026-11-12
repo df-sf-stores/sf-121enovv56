@@ -97,7 +97,7 @@ export const HeroCarousel = ({ slides, labels }: { slides: HeroSlide[]; labels: 
       {shown ? (
         <div className={styles.caption} aria-live={autoplay ? 'off' : 'polite'}>
           <div className={styles.captionInner}>
-            <div className={styles.captionText}>
+            <div key={shown.key} className={styles.captionText}>
               <p className={styles.eyebrow}>{shown.eyebrow}</p>
               <h2 className={styles.title}>{shown.title}</h2>
               <p className={styles.subtitle}>{shown.subtitle}</p>

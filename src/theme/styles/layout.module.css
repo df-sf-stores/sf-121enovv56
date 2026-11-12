@@ -35,7 +35,7 @@
   --focus: var(--primary-text);
   --radius: 12px;
   --button-radius: 999px;
-  --heading-font: 'Bebas Neue', sans-serif;
+  --heading-font: 'Bebas Neue', impact, haettenschweiler, 'Arial Narrow Bold', sans-serif;
   --heading-weight: 400;
   --brand-weight: 400;
   --heading-case: uppercase;
