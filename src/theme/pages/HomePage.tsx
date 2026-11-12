@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import { Image, Link, useCollections, useListing, useProducts, useStorefront, type CollectionCard, type ProductCard as Card } from '@dripfunnel/storefront-core/theme'
+import { Image, Link, ThemeImage, useCollections, useListing, useProducts, useStorefront, type CollectionCard, type ProductCard as Card } from '@dripfunnel/storefront-core/theme'
 import { HeroCarousel } from '../components/interactive/HeroCarousel'
 import { CarouselItem, ProductCarousel } from '../components/interactive/ProductCarousel'
 import { Layout } from '../components/Layout'
@@ -10,7 +10,29 @@ import art from '../styles/art.module.css'
 import shop from '../styles/shop.module.css'
 import styles from '../styles/home.module.css'
 
-const ArrowIcon = ({ className }: { className?: string }) => (
+const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+
+/** A photo for a collection tile whose collection has no image in the store yet, matched on its address or name. */
+const TilePhoto = ({ collection }: { collection: CollectionCard }) => {
+  const sizes = '(min-width: 1024px) 25vw, 50vw'
+  const className = cx(styles.tileImage, styles.tilePhoto)
+  const keys = [slugOf(collection), slugify(collection.name)]
+  for (const key of keys) {
+    switch (key) {
+      case 'automotive-gps-navigation-systems':
+        return <ThemeImage src="card-car-navigation.jpg" alt="" ratio={1} sizes={sizes} className={className} />
+      case 'gps-navigation-systems':
+        return <ThemeImage src="card-gps-navigation.jpg" alt="" ratio={1} sizes={sizes} className={className} />
+      case 'automotive-multimedia-systems':
+        return <ThemeImage src="card-multimedia.jpg" alt="" ratio={1} sizes={sizes} className={className} />
+      case 'motor-vehicle-electronics':
+        return <ThemeImage src="card-vehicle-electronics.jpg" alt="" ratio={1} sizes={sizes} className={className} />
+    }
+  }
+  return null
+}
+
+const ArrowIcon =({ className }: { className?: string }) => (
   <svg className={className ?? styles.arrowIcon} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
     <path d="M5 12h14M13 6l6 6-6 6" />
   </svg>
@@ -184,7 +206,13 @@ export const HomePage = () => {
                 : categories.slice(0, 8).map((c) => (
                     <li key={c.id}>
                       <Link href={c.href} className={styles.tile}>
-                        <span className={styles.tilePicture}>{c.image ? <Image image={c.image} alt="" ratio={1} sizes="(min-width: 1024px) 25vw, 50vw" className={styles.tileImage} /> : null}</span>
+                        <span className={styles.tilePicture}>
+                          {c.image ? (
+                            <Image image={c.image} alt="" ratio={1} sizes="(min-width: 1024px) 25vw, 50vw" className={styles.tileImage} />
+                          ) : (
+                            <TilePhoto collection={c} />
+                          )}
+                        </span>
                         <span className={styles.tileName}>
                           {c.name}
                           <ArrowIcon className={styles.tileArrow} />

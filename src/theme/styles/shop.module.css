@@ -57,7 +57,7 @@
   margin: 0;
   font-family: var(--heading-font);
   font-size: 28px;
-  font-weight: 700;
+  font-weight: var(--heading-weight);
   line-height: 1.15;
   text-transform: var(--heading-case);
 }

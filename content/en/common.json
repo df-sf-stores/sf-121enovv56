@@ -47,6 +47,9 @@
     "faq": "FAQs",
     "chat": "Chat with us",
     "whatsapp": "Chat with us on WhatsApp",
-    "rights": "© 2026 {store}. All rights reserved."
+    "rights": "© 2026 {store}. All rights reserved.",
+    "poweredBy": "Powered by",
+    "poweredLogo": "DripFunnel",
+    "poweredUrl": "https://www.dripfunnel.com/in/"
   }
 }

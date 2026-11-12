@@ -851,7 +851,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 8px 16px;
-  padding-block: 14px;
+  padding-block: 3px;
   color: rgb(248 250 252 / 70%);
   font-size: 12px;
   font-weight: 600;
@@ -869,7 +869,7 @@
 }
 
 .cookies::part(button) {
-  min-height: 32px;
+  min-height: 24px;
   padding: 0 4px;
   border: 0;
   background: transparent;
@@ -881,46 +881,38 @@
   color: var(--primary);
 }
 
-/* The band beneath the footer: "Powered by" and the platform's white logo, on the footer's navy. */
-.brandBar {
-  border-top: 1px solid rgb(255 255 255 / 8%);
-  background: var(--navy);
-}
-
-.brandInner {
+/* "| Powered by" and the platform's white logo, at the right of the footer's base bar. */
+.platform {
   display: flex;
-  min-height: 56px;
-  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  gap: 8px 14px;
-  padding-block: 12px;
+  gap: 10px;
+  padding-left: 16px;
+  border-left: 1px solid rgb(248 250 252 / 35%);
 }
 
 .brandLink {
   display: inline-flex;
-  min-height: 44px;
+  min-height: 24px;
   align-items: center;
-  border-radius: 6px;
+  border-radius: 4px;
+  opacity: 0.7;
   transition: opacity 0.2s ease;
 }
 
 .brandLink:hover {
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .brandLogo {
   display: block;
-  width: auto;
-  max-width: 180px;
-  height: 28px;
-  object-fit: contain;
+  width: 104px;
+  height: auto;
 }
 
 .powered {
   display: block;
   --df-sealed-muted: rgb(248 250 252 / 70%);
-  --df-sealed-color: var(--navy-ink);
+  --df-sealed-color: rgb(248 250 252 / 70%);
   --df-sealed-size: 12px;
 }
 

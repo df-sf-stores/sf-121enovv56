@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import { ConsentBanner, ConsentSettingsButton, Link, navigate, PoweredBy, PreviewBanner, SearchField, StoreLogo, useCart, useCollections, useMenu, useStorefront, useWishlist, type MenuItem } from '@dripfunnel/storefront-core/theme'
+import { ConsentBanner, ConsentSettingsButton, Link, navigate, PoweredBy, PreviewBanner, SearchField, StoreLogo, ThemeImage, useCart, useCollections, useMenu, useStorefront, useWishlist, type MenuItem } from '@dripfunnel/storefront-core/theme'
 import { Menu } from './interactive/Menu'
 import { NavItem } from './interactive/NavItem'
 import { SearchToggle } from './interactive/SearchToggle'
@@ -303,11 +303,12 @@ export const Layout = ({ children }: { children: ReactNode }) => {
           <div className={`${styles.container} ${styles.baseInner}`}>
             <p className={styles.copyright}>{t('common.footer.rights', { store: store.name })}</p>
             <ConsentSettingsButton t={t} className={styles.cookies} />
-          </div>
-        </div>
-        <div className={styles.brandBar}>
-          <div className={`${styles.container} ${styles.brandInner}`}>
-            <PoweredBy brand={poweredBy} t={t} className={styles.powered} />
+            <div className={styles.platform}>
+              {poweredBy ? <PoweredBy brand={poweredBy} t={t} className={styles.powered} /> : <span>{t('common.footer.poweredBy')}</span>}
+              <Link href={t('common.footer.poweredUrl')} className={styles.brandLink}>
+                <ThemeImage src="dripfunnel-white-logo.png" alt={t('common.footer.poweredLogo')} ratio={2077 / 369} sizes="110px" className={styles.brandLogo} />
+              </Link>
+            </div>
           </div>
         </div>
       </footer>
